@@ -3,8 +3,8 @@
 <!-- Starts Head Section -->
 
 <head>
-    <link rel="stylesheet" href="/static/css/styles.css">
-    <link rel="icon" type="image/x-icon" href="/static/images/free-30-instagram-stories-icons23_122570.png">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" type="image/x-icon" href="/images/free-30-instagram-stories-icons23_122570.png">
     <title>Petstagram</title>
 </head>
 
@@ -25,11 +25,11 @@
             <div class="container">
                 <div class="logo">
                     <!-- Link to Home Page -->
-                    <a href="#">
-                        <img width="50px" src="/static/images/free-30-instagram-stories-icons23_122570.png" alt="img1">
+                    <a href="/">
+                        <img width="50px" src="/images/free-30-instagram-stories-icons23_122570.png" alt="img1">
                     </a>
                     <!-- Link to Home Page -->
-                    <a class="home" href="#">
+                    <a class="home" href="/">
                         <i>Petstagram</i>
                     </a>
                 </div>
@@ -46,13 +46,13 @@
                         <!--For Guest User-->
                         <li class="nav-item">
                             <!-- Link to Login Page -->
-                            <a href="#">
+                            <a href="/users/login">
                                 <i>Login</i>
                             </a>
                         </li>
                         <li class="nav-item">
                             <!-- Link to Register Page -->
-                            <a href="#">
+                            <a href="/users/register">
                                 <i>Register</i>
                             </a>
                         </li>
@@ -74,7 +74,7 @@
 
                         <li class="nav-item">
                             <!-- Link to Logout Page -->
-                            <a href="#">
+                            <a href="/users/logout">
                                 <i>Logout</i>
                             </a>
                         </li>
@@ -84,23 +84,9 @@
         </nav>
     </header>
 
-    <!-- Starts Main Section -->
-    <main>
-        <!--Welcome Page-->
-        <section class="welcome-content">
-            <article class="welcome-content-text">
-                <h1>Place for Your</h1>
-                <h1 class="bold-welcome">Pets photos</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
-            </article>
-            <article class="welcome-content-image">
-                <img src="/static/images/header-dog.png" alt="dog">
-            </article>
-        </section>
 
-    </main>
-
-    <!-- Starts Footer Section -->
+    {{{body}}}
+    
     <div class="footer">
         <span class="footer-section">
             © 2023 SoftUni Back-End Exam
