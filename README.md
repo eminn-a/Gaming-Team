@@ -1,2 +1,3 @@
-# Gaming-Team
-Gaming-team exam preparation
+# Petstagram
+
+Pet instagram - exam preparation
