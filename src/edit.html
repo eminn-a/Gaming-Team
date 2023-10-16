@@ -1,73 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- Starts Head Section -->
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Page - Gaming Team</title>
-    <link rel="stylesheet" href="./static/css/styles.css" />
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="icon" type="image/x-icon" href="/static/images/free-30-instagram-stories-icons23_122570.png">
+    <title>Petstagram</title>
 </head>
+
+<!-- Starts Body Section -->
 
 <body>
 
-    <header class="header">
-        <nav>
-            <img src="./static/images/logo.jpg" class="logo">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">All Games Code</a></li>
-                <li><a href="#">Search</a></li>
-                <li><a href="#">Create Game Offer</a></li>
-                <li><a href="#">Login</a></li>
-                <li><a href="#">Register</a></li>
-                <li><a href="#">Logout</a></li>
-            </ul>
+    <!-- Starts Header Section with Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <!-- Link to Home Page -->
+                    <a href="#">
+                        <img width="50px" src="/static/images/free-30-instagram-stories-icons23_122570.png" alt="img1">
+                    </a>
+
+                    <!-- Link to Home Page -->
+                    <a class="home" href="#">
+                        <i>Petstagram</i>
+                    </a>
+                </div>
+
+                <div class="nav-links">
+                    <ul class="nav-group">
+                        <li class="nav-item">
+                            <!-- Link to Catalog Page -->
+                            <a href="#">
+                                <i>Catalog</i>
+                            </a>
+                        </li>
+
+                        <!--For Guest User-->
+                        <li class="nav-item">
+                            <!-- Link to Login Page -->
+                            <a href="#">
+                                <i>Login</i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- Link to Register Page -->
+                            <a href="#">
+                                <i>Register</i>
+                            </a>
+                        </li>
+
+                        <!--For login users-->
+                        <li class="nav-item">
+                            <!-- Link to Add Photo Page -->
+                            <a href="#">
+                                <i>Add Photo</i>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <!-- Link to Profile Page -->
+                            <a href="#">
+                                <i>Profile</i>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <!-- Link to Logout Page -->
+                            <a href="#">
+                                <i>Logout</i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
 
-    <main id="edit">
-        <!-- In case of error, you should display div with class "errorContainer" -->
-        <!-- You can choose to display the first error or all of them (error message/s in your opinion) -->
+    <!-- Starts Main Section -->
+    <main>
+        <!-- Start Add Photo Section -->
+        <div class="editPage">
+            <h2>Edit photo</h2>
+            <!-- Start Add Photo Form -->
+            <form action="">
+                <p>
+                    <input type="text" name="" placeholder="Name" value="Sal">
+                </p>
 
-        <!-- <div>
-            <div class="errorContainer">
-                <p>Error</p>
-            </div>
-        </div> -->
-        <section id="edit-container">
-            <div class="edit-container-info">
-                <h1>Edit Game Code Offer</h1>
-                <form action="#" method="">
-                    <label>Platform:</label>
-                    <select id="platform" name="">
-                        <option value="">-------</option>
-                        <option value="PC">PC</option>
-                        <option value="Nintendo">Nintendo</option>
-                        <option value="PS4">PS4</option>
-                        <option value="PS5">PS5</option>
-                        <option value="XBOX" selected>XBOX</option>
-                    </select>
-                    <label>Name:</label>
-                    <input type="text" id="name" name="" value="Hogwarts Legacy">
-                    <label>Image:</label>
-                    <input type="text" id="image" name="" placeholder="https://image.api.playstation.com/vulcan/ap/rnd/202208/0921/dR9KJAKDW2izPbptHQbh3rnj.png">
-                    <label>Price:</label>
-                    <input type="number" id="price" name="" value="55">
-                    <label>Genre:</label>
-                    <input type="text" id="genre" name="" value="Action Role-Playing">
-                    <label>Description:</label>
-                    <textarea id="description" name="">Hogwarts Legacy is an open-world action RPG set in the world first introduced in the Harry Potter books. Embark on a journey through familiar and new locations as you explore and discover magical beasts, customize your character and craft potions, master spell casting, upgrade talents and become the wizard you want to be.
-                    </textarea>
-                    <input type="submit" id="btn" value="EDIT"></input>
-                </form>
-            </div>
-        </section>
+                <p>
+                    <input type="number" name="" placeholder="Age" value="4">
+                </p>
+
+                <p>
+                    <textarea type="text" name="" placeholder="Description">This is my pet!</textarea>
+                </p>
+
+                <p>
+                    <input type="text" name="" placeholder="Location" value="Bansko, Bulgaria">
+                </p>
+
+                <p>
+                    <input type="text" name="" placeholder="Link to image" value="/static/images/axolotl.jpeg">
+                </p>
+                <!-- Add Photo Button -->
+                <button class="edit-btn" type="submit">Edit Photo</button>
+            </form>
+        </div>
     </main>
 
-    <footer>
-        <p>Back-End 2023</p>
-    </footer>
+    <!-- Start Footer Section -->
+    <div class="footer">
+        <span class="footer-section">
+            © 2023 SoftUni Back-End Exam
+        </span>
+    </div>
+
 </body>
 
 </html>

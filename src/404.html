@@ -1,44 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- Starts Head Section -->
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 Page - Gaming Team</title>
-    <link rel="stylesheet" href="./static/css/styles.css" />
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="icon" type="image/x-icon" href="/static/images/free-30-instagram-stories-icons23_122570.png">
+    <title>Petstagram</title>
 </head>
 
+<!-- Starts Body Section -->
+
 <body>
-    <header class="header">
-        <nav>
-            <img src="./static/images/logo.jpg" class="logo">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">All Games Code</a></li>
-                <li><a href="#">Search</a></li>
-                <li><a href="#">Create Game Offer</a></li>
-                <li><a href="#">Login</a></li>
-                <li><a href="#">Register</a></li>
-                <li><a href="#">Logout</a></li>
-            </ul>
+
+    <!-- Starts Header Section with Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <!-- Link to Home Page -->
+                    <a href="#">
+                        <img width="50px" src="/static/images/free-30-instagram-stories-icons23_122570.png" alt="img1">
+                    </a>
+                    <!-- Link to Home Page -->
+                    <a class="home" href="#">
+                        <i>Petstagram</i>
+                    </a>
+                </div>
+
+                <div class="nav-links">
+                    <ul class="nav-group">
+                        <li class="nav-item">
+                            <!-- Link to Catalog Page -->
+                            <a href="#">
+                                <i>Catalog</i>
+                            </a>
+                        </li>
+
+                        <!--For Guest User-->
+                        <li class="nav-item">
+                            <!-- Link to Login Page -->
+                            <a href="#">
+                                <i>Login</i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- Link to Register Page -->
+                            <a href="#">
+                                <i>Register</i>
+                            </a>
+                        </li>
+
+                        <!--For login users-->
+                        <li class="nav-item">
+                            <!-- Link to Add Photo Page -->
+                            <a href="#">
+                                <i>Add Photo</i>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <!-- Link to Profile Page -->
+                            <a href="#">
+                                <i>Profile</i>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <!-- Link to Logout Page -->
+                            <a href="#">
+                                <i>Logout</i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
 
-    <main id="errorPage">
-        <div id="not-found-page">
-            <div class="not-found-page-container">
-                <h2>Page Not Found</h2>
-                <p>The page you are looking for doesn't exist. Go to <a href="#"
-                        class="btn">Games</a>.
-                </p>
-            </div>
+    <!-- Starts Main Section -->
+    <main>
+        <!-- 404 page -->
+        <div class="not-found-img">
+            <img src="/static/images/zillow-404-page-5f3ed6a6abaa5.gif" alt="404 not found gif">
         </div>
+
+        <div class="not-found">
+            <h1>
+                Uh oh,<br> something broke.
+            </h1>
+
+            <h3>Error 404 - page not found.</h3>
+            <!-- Link to Home Page -->
+            <a href="#">
+                <button>Return to Petstagram</button>
+            </a>
+        </div>
+
     </main>
 
-    <footer>
-        <p>Back-End 2023</p>
-    </footer>
+    <!-- Starts Footer Section -->
+    <div class="footer">
+        <span class="footer-section">
+            © 2023 SoftUni Back-End Exam
+        </span>
+    </div>
+
 </body>
 
 </html>
