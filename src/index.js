@@ -2,6 +2,7 @@ const express = require("express");
 const handlebars = require("express-handlebars");
 const path = require("path");
 const mongoose = require("mongoose");
+const cookieParser = require("cookie-parser");
 
 const routes = require("./routes");
 
@@ -18,7 +19,7 @@ app.set("view engine", "hbs");
 app.set("views", "src/views");
 app.use(express.static(path.resolve(__dirname, "public")));
 app.use(express.urlencoded({ extended: false }));
-
+app.use(cookieParser());
 app.use(routes);
 
 app.listen(3000, console.log("Server listen Port:3000!"));
