@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const { TOKEN_KEY } = require("../config/config");
 const userManager = require("../managers/userManager");
 const { errorHandler } = require("../middlewares/errorHandlerMiddleware");
 const { getErrorMessage } = require("../utils/errorHelpers");
@@ -14,7 +15,6 @@ router.post("/login", async (req, res) => {
     res.cookie("token", token);
     res.redirect("/");
   } catch (err) {
-    console.log(getErrorMessage(err));
     res.render("users/login", { error: getErrorMessage(err) });
   }
 });
@@ -24,14 +24,19 @@ router.get("/register", (req, res) => {
 });
 
 router.post("/register", async (req, res) => {
-  const { username, password, repeatPassword } = req.body;
+  const { username, email, password, repeatPassword } = req.body;
 
   try {
-    await userManager.register({ username, password, repeatPassword });
-    res.redirect("/users/login");
+    const token = await userManager.register({
+      username,
+      email,
+      password,
+      repeatPassword,
+    });
+    res.cookie(TOKEN_KEY, token);
+    res.redirect("/");
   } catch (err) {
-    console.log(getErrorMessage(err));
-    res.render("users/login", { error: getErrorMessage(err) });
+    res.render("users/register", { error: getErrorMessage(err) });
   }
 });
 
