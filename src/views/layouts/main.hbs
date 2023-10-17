@@ -11,15 +11,16 @@
 <!-- Starts Body Section -->
 
 <body>
-    <!--Error Container-->
+   
 
-    <!-- <div>
+     {{#if error}}
+     <div>
         <div class="errorContainer">
-            <p>Error</p>
+            <p>{{error}}</p>
         </div>
-    </div> -->
-
-    <!-- Starts Header Section with Navigation Bar -->
+    </div> 
+    {{/if}}
+  
     <header>
         <nav class="navbar">
             <div class="container">
