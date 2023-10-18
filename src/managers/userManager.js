@@ -29,7 +29,7 @@ exports.register = async (userData) => {
   const token = await generateToken(createdUser);
   return token;
 };
-
+//token generator!
 async function generateToken(user) {
   const payload = {
     id: user._id,
