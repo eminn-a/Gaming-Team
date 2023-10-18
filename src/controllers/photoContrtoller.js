@@ -83,11 +83,25 @@ router.post("/:id/comments", async (req, res) => {
   const { message } = req.body;
   const user = req.user.username;
 
-  try {
-    await photoManager.addComment(petId, { user, message });
-    res.redirect(`/users/${petId}/details`);
-  } catch (err) {
-    res.render("404", { error: getErrorMessage(err) });
+  if (!message) {
+    try {
+      const photo = await photoManager.getOne(petId);
+      const isOwner = photo.owner._id.toString() === req.user?.id;
+      res.render("photos/details", {
+        photo,
+        isOwner,
+        error: "Message required!",
+      });
+    } catch (err) {
+      res.render("404", { error: getErrorMessage(err) });
+    }
+  } else {
+    try {
+      await photoManager.addComment(petId, { user, message });
+      res.redirect(`/users/${petId}/details`);
+    } catch (err) {
+      res.render("404", { error: getErrorMessage(err) });
+    }
   }
 });
 
