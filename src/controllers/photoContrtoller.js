@@ -83,9 +83,12 @@ router.post("/:id/comments", async (req, res) => {
   const { message } = req.body;
   const user = req.user.username;
 
-  await photoManager.addComment(petId, { user, message });
-
-  res.redirect(`/users/${petId}/details`);
+  try {
+    await photoManager.addComment(petId, { user, message });
+    res.redirect(`/users/${petId}/details`);
+  } catch (err) {
+    res.render("404", { error: getErrorMessage(err) });
+  }
 });
 
 module.exports = router;

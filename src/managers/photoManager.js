@@ -15,9 +15,7 @@ exports.update = (id, data) => Photo.findByIdAndUpdate(id, data);
 
 exports.addComment = async (petId, commentData) => {
   const pet = await Photo.findById(petId);
-
   pet.comments.push(commentData);
-
   return pet.save();
 };
 

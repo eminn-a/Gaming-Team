@@ -30,6 +30,7 @@ const photoSchema = {
       user: String,
       message: {
         type: String,
+        required: true,
       },
     },
   ],

@@ -51,7 +51,6 @@ router.get("/profile", async (req, res) => {
 
   const photos = await photoManager.getByOwner(req.user.id);
   const counter = photos.length;
-  console.log(photos);
   res.render("profile.hbs", { user, photos, counter });
 });
 module.exports = router;
