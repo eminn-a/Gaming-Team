@@ -4,6 +4,7 @@ const userManager = require("../managers/userManager");
 const { errorHandler } = require("../middlewares/errorHandlerMiddleware");
 const { getErrorMessage } = require("../utils/errorHelpers");
 const photoManager = require("../managers/photoManager");
+const { isAuth } = require("../middlewares/authMiddleware");
 
 router.get("/login", (req, res) => {
   res.render("users/login");
@@ -46,10 +47,10 @@ router.get("/logout", (req, res) => {
   res.redirect("/");
 });
 
-router.get("/profile", async (req, res) => {
+router.get("/profile", isAuth, async (req, res) => {
   const user = req.user;
 
-  const photos = await photoManager.getByOwner(req.user.id);
+  const photos = await photoManager.getByOwner(req.user?.id);
   const counter = photos.length;
   res.render("profile.hbs", { user, photos, counter });
 });

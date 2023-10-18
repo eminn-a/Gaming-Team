@@ -10,7 +10,7 @@ router.get("/create", isAuth, (req, res) => {
   res.render("photos/create");
 });
 
-router.post("/create", async (req, res) => {
+router.post("/create", isAuth, async (req, res) => {
   const photoData = req.body;
   photoData["owner"] = req.user.id;
 
@@ -45,7 +45,7 @@ router.get("/:id/details", async (req, res) => {
   }
 });
 
-router.get("/:id/delete", async (req, res) => {
+router.get("/:id/delete", isAuth, async (req, res) => {
   const petId = req.params.id;
   try {
     await photoManager.delete(petId);
@@ -55,7 +55,7 @@ router.get("/:id/delete", async (req, res) => {
   }
 });
 
-router.get("/:id/edit", async (req, res) => {
+router.get("/:id/edit", isAuth, async (req, res) => {
   const petId = req.params.id;
 
   try {
@@ -66,7 +66,7 @@ router.get("/:id/edit", async (req, res) => {
   }
 });
 
-router.post("/:id/edit", async (req, res) => {
+router.post("/:id/edit", isAuth, async (req, res) => {
   const petId = req.params.id;
   const pet = req.body;
 
@@ -78,7 +78,7 @@ router.post("/:id/edit", async (req, res) => {
   }
 });
 
-router.post("/:id/comments", async (req, res) => {
+router.post("/:id/comments", isAuth, async (req, res) => {
   const petId = req.params.id;
   const { message } = req.body;
   const user = req.user.username;
