@@ -3,6 +3,7 @@ const { TOKEN_KEY } = require("../config/config");
 const userManager = require("../managers/userManager");
 const { errorHandler } = require("../middlewares/errorHandlerMiddleware");
 const { getErrorMessage } = require("../utils/errorHelpers");
+const photoManager = require("../managers/photoManager");
 
 router.get("/login", (req, res) => {
   res.render("users/login");
@@ -43,5 +44,14 @@ router.post("/register", async (req, res) => {
 router.get("/logout", (req, res) => {
   res.clearCookie("token");
   res.redirect("/");
+});
+
+router.get("/profile", async (req, res) => {
+  const user = req.user;
+
+  const photos = await photoManager.getByOwner(req.user.id);
+  const counter = photos.length;
+  console.log(photos);
+  res.render("profile.hbs", { user, photos, counter });
 });
 module.exports = router;
